@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="32dp"
+        android:text="Select a cipher!"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/cipherMenu"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.5"/>
+
+    <RadioGroup
+        android:id="@+id/cipherMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/encryptButton"
+        app:layout_constraintRight_toRightOf="@id/practiceButton"
+        app:layout_constraintHorizontal_bias="0.5">
+        <RadioButton android:id="@+id/shiftCipher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Shift Cipher"
+            android:onClick="onRadioButtonClicked" />
+        <RadioButton android:id="@+id/vigenereCipher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vigenere Cipher"
+            android:onClick="onRadioButtonClicked" />
+        <RadioButton android:id="@+id/affineCipher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Affine Cipher"
+            android:onClick="onRadioButtonClicked" />
+        <RadioButton android:id="@+id/hillCipher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hill Cipher"
+            android:onClick="onRadioButtonClicked" />
+        <RadioButton android:id="@+id/rsaCipher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RSA Cipher"
+            android:onClick="onRadioButtonClicked" />
+    </RadioGroup>
+
+
+    <Button
+        android:id="@+id/encryptButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Encrypt"
+        app:layout_constraintTop_toBottomOf="@id/cipherMenu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/decryptButton"
+        android:onClick="onEncryptButtonClicked" />
+
+    <Button
+        android:id="@+id/decryptButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Decrypt"
+        app:layout_constraintTop_toBottomOf="@id/cipherMenu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintLeft_toRightOf="@id/encryptButton"
+        app:layout_constraintRight_toLeftOf="@id/learnButton"
+        android:onClick="onDecryptButtonClicked"/>
+
+    <Button
+        android:id="@+id/learnButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Learn"
+        app:layout_constraintTop_toBottomOf="@id/cipherMenu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintLeft_toRightOf="@id/decryptButton"
+        app:layout_constraintRight_toLeftOf="@id/practiceButton"
+        android:onClick="onLearnButtonClicked"/>
+
+    <Button
+        android:id="@+id/practiceButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Practice"
+        app:layout_constraintTop_toBottomOf="@id/cipherMenu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintLeft_toRightOf="@id/learnButton"
+        app:layout_constraintRight_toRightOf="parent"
+        android:onClick="onPracticeButtonClicked"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
