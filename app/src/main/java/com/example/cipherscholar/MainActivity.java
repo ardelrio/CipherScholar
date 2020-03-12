@@ -2,6 +2,7 @@ package com.example.cipherscholar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioButton;
@@ -62,9 +63,13 @@ public class MainActivity extends AppCompatActivity {
         {
             case "shift":
                 //Go to shift encrypt activity
+                Intent intent = new Intent(this, ShiftCipher.class);
+                startActivity(intent);
                 break;
             case "vigenere":
                 //Go to vigenere encrypt activity
+                intent = new Intent(this, VigenereCipher.class);
+                startActivity(intent);
                 break;
             case "hill":
                 //Go to hill encrypt activity
@@ -84,9 +89,13 @@ public class MainActivity extends AppCompatActivity {
         {
             case "shift":
                 //Go to shift decrypt activity
+                Intent intent = new Intent(this, ShiftCipherDecrypt.class);
+                startActivity(intent);
                 break;
             case "vigenere":
                 //Go to vigenere decrypt activity
+                intent = new Intent(this, VigenereCipherDecrypt.class);
+                startActivity(intent);
                 break;
             case "hill":
                 //Go to hill decrypt activity
