@@ -127,18 +127,28 @@ public class MainActivity extends AppCompatActivity {
         {
             case "shift":
                 //Go to shift learn activity
+                Intent intent = new Intent(this, ShiftCipherLearn.class);
+                startActivity(intent);
                 break;
             case "vigenere":
                 //Go to vigenere learn activity
+                intent = new Intent(this, VigenereCipherLearn.class);
+                startActivity(intent);
                 break;
             case "hill":
                 //Go to hill learn activity
+                Intent intent1 = new Intent(this, HillCipherLearn.class);
+                startActivity(intent1);
                 break;
             case "affine":
                 //Go to affine learn activity
+                Intent intent2 = new Intent(this, AffineCipherLearn.class);
+                startActivity(intent2);
                 break;
             case "rsa":
                 //Go to rsa learn activity
+                Intent intent3 = new Intent(this, RsaCipherLearn.class);
+                startActivity(intent3);
                 break;
         }
     }

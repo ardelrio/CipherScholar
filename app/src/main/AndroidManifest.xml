@@ -9,16 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RsaCipherDecrypt"></activity>
-        <activity android:name=".HillCipherDecrypt" />
-        <activity android:name=".AffineCipherDecrypt" />
-        <activity android:name=".RsaCipher" />
-        <activity android:name=".HillCipher" />
         <activity android:name=".AffineCipher" />
-        <activity android:name=".VigenereCipherDecrypt" />
-        <activity android:name=".VigenereCipher" />
-        <activity android:name=".ShiftCipherDecrypt" />
+        <activity android:name=".AffineCipherDecrypt" />
+        <activity android:name=".AffineCipherLearn" />
+        <activity android:name=".HillCipher" />
+        <activity android:name=".HillCipherDecrypt" />
+        <activity android:name=".HillCipherLearn" />
+        <activity android:name=".RsaCipher" />
+        <activity android:name=".RsaCipherDecrypt" />
+        <activity android:name=".RsaCipherLearn" />
         <activity android:name=".ShiftCipher" />
+        <activity android:name=".ShiftCipherDecrypt" />
+        <activity android:name=".ShiftCipherLearn" />
+        <activity android:name=".VigenereCipher" />
+        <activity android:name=".VigenereCipherDecrypt" />
+        <activity android:name=".VigenereCipherLearn" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
