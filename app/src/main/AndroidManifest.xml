@@ -9,7 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".VigenereCipherDecrypt"></activity>
+        <activity android:name=".RsaCipherDecrypt"></activity>
+        <activity android:name=".HillCipherDecrypt" />
+        <activity android:name=".AffineCipherDecrypt" />
+        <activity android:name=".RsaCipher" />
+        <activity android:name=".HillCipher" />
+        <activity android:name=".AffineCipher" />
+        <activity android:name=".VigenereCipherDecrypt" />
         <activity android:name=".VigenereCipher" />
         <activity android:name=".ShiftCipherDecrypt" />
         <activity android:name=".ShiftCipher" />

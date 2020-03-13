@@ -73,12 +73,18 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case "hill":
                 //Go to hill encrypt activity
+                intent = new Intent(this, HillCipher.class);
+                startActivity(intent);
                 break;
             case "affine":
                 //Go to affine encrypt activity
+                intent = new Intent(this, AffineCipher.class);
+                startActivity(intent);
                 break;
             case "rsa":
                 //Go to rsa encrypt activity
+                intent = new Intent(this, RsaCipher.class);
+                startActivity(intent);
                 break;
         }
     }
@@ -99,12 +105,18 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case "hill":
                 //Go to hill decrypt activity
+                Intent intent1 = new Intent(this, HillCipherDecrypt.class);
+                startActivity(intent1);
                 break;
             case "affine":
                 //Go to affine decrypt activity
+                Intent intent2 = new Intent(this, AffineCipherDecrypt.class);
+                startActivity(intent2);
                 break;
             case "rsa":
                 //Go to rsa decrypt activity
+                Intent intent3 = new Intent(this, RsaCipherDecrypt.class);
+                startActivity(intent3);
                 break;
         }
     }
