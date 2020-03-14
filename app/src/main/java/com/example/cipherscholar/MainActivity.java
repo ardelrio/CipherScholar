@@ -155,6 +155,33 @@ public class MainActivity extends AppCompatActivity {
 
     public void onPracticeButtonClicked(View view)
     {
-        //Go to practice activity
+        switch(this.selectedCipher)
+        {
+            case "shift":
+                //Go to shift learn activity
+                Intent intent = new Intent(this, ShiftCipherPractice.class);
+                startActivity(intent);
+                break;
+            case "vigenere":
+                //Go to vigenere learn activity
+                intent = new Intent(this, VigenereCipherPractice.class);
+                startActivity(intent);
+                break;
+            case "hill":
+                //Go to hill learn activity
+                Intent intent1 = new Intent(this, HillCipherPractice.class);
+                startActivity(intent1);
+                break;
+            case "affine":
+                //Go to affine learn activity
+                Intent intent2 = new Intent(this, AffineCipherPractice.class);
+                startActivity(intent2);
+                break;
+            case "rsa":
+                //Go to rsa learn activity
+                Intent intent3 = new Intent(this, RsaCipherPractice.class);
+                startActivity(intent3);
+                break;
+        }
     }
 }
