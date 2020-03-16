@@ -33,6 +33,7 @@
         android:id="@+id/editText2"
         android:layout_width="258dp"
         android:layout_height="50dp"
+        android:hint="enter a number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
