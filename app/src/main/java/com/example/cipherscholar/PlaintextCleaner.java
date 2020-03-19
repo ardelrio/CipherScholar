@@ -3,7 +3,7 @@ package com.example.cipherscholar;
 import java.util.ArrayList;
 
 /**
- * Use this class to take your plaintext string and convert it into all letters a - z
+ * Use this class to to do some common operations on strings for encryption and decryption
  */
 public class PlaintextCleaner {
 
