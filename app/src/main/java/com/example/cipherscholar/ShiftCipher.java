@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class ShiftCipher extends AppCompatActivity {
 
@@ -24,6 +25,8 @@ public class ShiftCipher extends AppCompatActivity {
         //TODO add encrypt functionality
         EditText plaintext = (EditText) findViewById(R.id.editText);
         EditText key = (EditText) findViewById(R.id.editText2);
+
+        TextView textView = (TextView) findViewById(R.id.textView);
 
         String p = plaintext.getText().toString();
         String k_string = key.getText().toString();
@@ -70,6 +73,7 @@ public class ShiftCipher extends AppCompatActivity {
 
         // TODO change. Just putting this here for now to test my work
         plaintext.setText(ciphertext);
+        textView.setText("Plaintext -> Ciphertext");
 
         // Maybe a toast?
         // Maybe a new activity/screen like in Currency Converter?
