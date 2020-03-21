@@ -1,7 +1,5 @@
 package com.example.cipherscholar;
 
-import java.util.ArrayList;
-
 /**
  * Use this class to to do some common operations on strings for encryption and decryption
  */
