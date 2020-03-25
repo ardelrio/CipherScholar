@@ -60,48 +60,48 @@
         android:id="@+id/encryptButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="onEncryptButtonClicked"
         android:text="Encrypt"
-        app:layout_constraintTop_toBottomOf="@id/cipherMenu"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.5"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/decryptButton"
-        android:onClick="onEncryptButtonClicked" />
+        app:layout_constraintTop_toBottomOf="@id/cipherMenu"
+        app:layout_constraintVertical_bias="0.388" />
 
     <Button
         android:id="@+id/decryptButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="onDecryptButtonClicked"
         android:text="Decrypt"
-        app:layout_constraintTop_toBottomOf="@id/cipherMenu"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.5"
         app:layout_constraintLeft_toRightOf="@id/encryptButton"
         app:layout_constraintRight_toLeftOf="@id/learnButton"
-        android:onClick="onDecryptButtonClicked"/>
+        app:layout_constraintTop_toBottomOf="@id/cipherMenu"
+        app:layout_constraintVertical_bias="0.388" />
 
     <Button
         android:id="@+id/learnButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="onLearnButtonClicked"
         android:text="Learn"
-        app:layout_constraintTop_toBottomOf="@id/cipherMenu"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.5"
         app:layout_constraintLeft_toRightOf="@id/decryptButton"
         app:layout_constraintRight_toLeftOf="@id/practiceButton"
-        android:onClick="onLearnButtonClicked"/>
+        app:layout_constraintTop_toBottomOf="@id/cipherMenu"
+        app:layout_constraintVertical_bias="0.388" />
 
     <Button
         android:id="@+id/practiceButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="onPracticeButtonClicked"
         android:text="Practice"
-        app:layout_constraintTop_toBottomOf="@id/cipherMenu"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.5"
         app:layout_constraintLeft_toRightOf="@id/learnButton"
         app:layout_constraintRight_toRightOf="parent"
-        android:onClick="onPracticeButtonClicked"/>
+        app:layout_constraintTop_toBottomOf="@id/cipherMenu"
+        app:layout_constraintVertical_bias="0.388" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
