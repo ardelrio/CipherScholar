@@ -36,7 +36,7 @@
         <RadioButton android:id="@+id/vigenereCipher"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Vigenere Cipher"
+            android:text="Vigenére Cipher"
             android:onClick="onRadioButtonClicked" />
         <RadioButton android:id="@+id/affineCipher"
             android:layout_width="match_parent"
