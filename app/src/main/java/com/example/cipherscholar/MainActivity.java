@@ -86,6 +86,9 @@ public class MainActivity extends AppCompatActivity {
                 intent = new Intent(this, RsaCipher.class);
                 startActivity(intent);
                 break;
+            default:
+                Toast.makeText(this, "Please select a cipher", Toast.LENGTH_SHORT).show();
+                break;
         }
     }
 
@@ -117,6 +120,9 @@ public class MainActivity extends AppCompatActivity {
                 //Go to rsa decrypt activity
                 Intent intent3 = new Intent(this, RsaCipherDecrypt.class);
                 startActivity(intent3);
+                break;
+            default:
+                Toast.makeText(this, "Please select a cipher", Toast.LENGTH_SHORT).show();
                 break;
         }
     }
@@ -150,6 +156,9 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent3 = new Intent(this, RsaCipherLearn.class);
                 startActivity(intent3);
                 break;
+            default:
+                Toast.makeText(this, "Please select a cipher", Toast.LENGTH_SHORT).show();
+                break;
         }
     }
 
@@ -181,6 +190,9 @@ public class MainActivity extends AppCompatActivity {
                 //Go to rsa learn activity
                 Intent intent3 = new Intent(this, RsaCipherPractice.class);
                 startActivity(intent3);
+                break;
+            default:
+                Toast.makeText(this, "Please select a cipher", Toast.LENGTH_SHORT).show();
                 break;
         }
     }
