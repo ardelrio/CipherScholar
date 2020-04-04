@@ -35,29 +35,30 @@ public class VigenereCipherDecrypt extends AppCompatActivity {
         if (k_string.length() < 1 || c.length() < 1) {
             Toast.makeText(this, "Incorrect formatting of input", Toast.LENGTH_SHORT).show();
         }
+        else {
+            /* convert ciphertext to numbers  */
+            PlaintextCleaner pc = new PlaintextCleaner();
+            c = pc.removeExcess(c);
+            int[] ct = pc.convertToNum(c);  // ct = ciphertext as numbers
 
-        /* convert ciphertext to numbers  */
-        PlaintextCleaner pc = new PlaintextCleaner();
-        c = pc.removeExcess(c);
-        int[] ct = pc.convertToNum(c);  // ct = ciphertext as numbers
+            /* convert key to numbers  */
+            k_string = pc.removeExcess(k_string);
+            int[] k = pc.convertToNum(k_string);  // k = key as number
 
-        /* convert key to numbers  */
-        k_string = pc.removeExcess(k_string);
-        int[] k = pc.convertToNum(k_string);  // k = key as number
-
-        int[] decrypted_int = new int[c.length()];  // final decrypted word as int
-        for(int i = 0; i < c.length(); i++) {
-            int sub = ct[i] - k[i % k.length];
-            if(sub < 0) {
-                while(sub < 0)
-                sub += 26;
+            int[] decrypted_int = new int[c.length()];  // final decrypted word as int
+            for (int i = 0; i < c.length(); i++) {
+                int sub = ct[i] - k[i % k.length];
+                if (sub < 0) {
+                    while (sub < 0)
+                        sub += 26;
+                }
+                decrypted_int[i] = sub % 26;
             }
-            decrypted_int[i] = sub % 26;
-        }
 
-        /* Convert cipher-text to string */
-        String decrypted_string = pc.convertToString(decrypted_int);  // final decrypted word as string
-        ciphertext.setText(decrypted_string);
-        textView.setText("Ciphertext -> Plaintext");
+            /* Convert cipher-text to string */
+            String decrypted_string = pc.convertToString(decrypted_int);  // final decrypted word as string
+            ciphertext.setText(decrypted_string);
+            textView.setText("Ciphertext -> Plaintext");
+        }
     }
 }
