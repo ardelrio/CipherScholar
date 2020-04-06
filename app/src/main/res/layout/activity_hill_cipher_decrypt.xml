@@ -10,9 +10,10 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Shift Cipher"
+        android:text="Hill Cipher"
         android:textSize="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -24,21 +25,10 @@
         android:layout_height="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.405" />
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="258dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.634" />
 
     <TextView
         android:id="@+id/textView"
@@ -47,6 +37,7 @@
         android:text="Cipher Text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.316" />
@@ -55,10 +46,23 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Shift"
+        android:layout_marginEnd="14dp"
+        android:layout_marginRight="14dp"
+        android:text="Encryption Matrix"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/textView4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.543" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Decryption Matrix"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/textView3"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.543" />
 
@@ -76,16 +80,115 @@
         app:layout_constraintVertical_bias="0.007" />
 
     <Button
-        android:id="@+id/encryptButton"
+        android:id="@+id/decryptButton"
         android:layout_width="124dp"
         android:layout_height="53dp"
         android:onClick="clickDecryptFunction"
         android:text="Decrypt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.528"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextE_11"
         app:layout_constraintVertical_bias="0.82" />
+
+    <EditText
+        android:id="@+id/editTextE_00"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:ems="10"
+        android:hint="a"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@id/editTextE_10"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/editTextE_01"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <EditText
+        android:id="@+id/editTextE_01"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:ems="10"
+        android:hint="b"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@id/editTextE_11"
+        app:layout_constraintLeft_toRightOf="@id/editTextE_00"
+        app:layout_constraintRight_toLeftOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <EditText
+        android:id="@+id/editTextE_10"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:ems="10"
+        android:hint="c"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@id/decryptButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/editTextE_11"
+        app:layout_constraintTop_toBottomOf="@+id/editTextE_00" />
+
+    <EditText
+        android:id="@+id/editTextE_11"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:ems="10"
+        android:hint="d"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@id/decryptButton"
+        app:layout_constraintLeft_toRightOf="@+id/editTextE_10"
+        app:layout_constraintRight_toLeftOf="@id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/editTextE_01" />
+
+    <TextView
+        android:id="@+id/textViewD_00"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="a"
+        app:layout_constraintBottom_toTopOf="@id/textViewD_10"
+        app:layout_constraintLeft_toRightOf="@id/textView3"
+        app:layout_constraintRight_toLeftOf="@id/textViewD_01"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"/>
+
+    <TextView
+        android:id="@+id/textViewD_01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="b"
+        app:layout_constraintBottom_toTopOf="@id/textViewD_11"
+        app:layout_constraintLeft_toRightOf="@id/textViewD_00"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"/>
+
+    <TextView
+        android:id="@+id/textViewD_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="c"
+        app:layout_constraintBottom_toTopOf="@id/decryptButton"
+        app:layout_constraintLeft_toRightOf="@id/textView3"
+        app:layout_constraintRight_toLeftOf="@+id/textViewD_11"
+        app:layout_constraintTop_toBottomOf="@+id/textViewD_00"/>
+
+    <TextView
+        android:id="@+id/textViewD_11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="d"
+        app:layout_constraintBottom_toTopOf="@id/decryptButton"
+        app:layout_constraintLeft_toRightOf="@+id/textViewD_10"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewD_01"/>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Note: For ciphertexts of odd length, the letter 'Z' is added at the end to complete the last bigram."
+        app:layout_constraintBottom_toTopOf="@id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView2"
+        app:layout_constraintVertical_bias="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
