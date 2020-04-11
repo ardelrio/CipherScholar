@@ -1,49 +1,156 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
-    tools:context=".HillCipherLearn">
+    tools:context=".AffineCipherLearn">
 
-    <Button
-        android:id="@+id/homeButton"
-        android:layout_width="78dp"
-        android:layout_height="40dp"
-        android:onClick="clickFunction"
-        android:text="Home"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.018"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.007" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hill Cipher"
-        android:textSize="32dp"
-        android:textStyle ="bold"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.123" />
+        <Button
+            android:id="@+id/homeButton"
+            android:layout_width="78dp"
+            android:layout_height="40dp"
+            android:onClick="clickFunction"
+            android:text="Home"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.018"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.007" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="This is the hill cipher learn page"
-        android:textStyle ="bold"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.316" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hill Cipher"
+            android:textSize="32dp"
+            android:textStyle ="bold"
+            android:textColor="#000000"
+            android:layout_below="@+id/homeButton"
+            android:layout_centerHorizontal="true"
+            />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="    The Hill cipher is a polyalphabetic cipher that makes use of substitution through linear algebra. When encrypting the Hill cipher you are given plaintext and a key matrix. The key matrix is then multiplied with the corresponding plaintext matrix. "
+            android:textStyle ="bold"
+            android:textColor="#000000"
+            android:layout_below="@+id/textView2"
+            android:layout_centerHorizontal="true"
+            />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text ="    The plaintext matrix can be found by taking the number representation of each letter applying the mod 26 and creating the length of the plaintext N and splitting it into N/2 groups and creating N/2 2x1 matrices. Then by multiplying each 2X1 matrix by the key matrix and using mod 26 to find its alphabetic representation as well as concatenation of the N/2 matrices, you will have your ciphertext"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:layout_below="@+id/textView1"
+            android:layout_centerHorizontal="true"
+            />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="     Example of Encryption:"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:layout_below="@+id/textView3"
+            android:layout_centerHorizontal="true"
+            />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="347dp"
+            android:layout_height="64dp"
+            android:layout_below="@+id/textView4"
+            android:layout_marginTop="3dp"
+            app:srcCompat="@drawable/ptext_yup" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="401dp"
+            android:layout_height="77dp"
+            android:layout_below="@+id/textView4"
+            android:layout_marginTop="105dp"
+            app:srcCompat="@drawable/ptext2_hill" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView1"
+            android:layout_marginTop="133dp"
+            android:text="     When decrypting the Hill cipher you are given ciphertext and the key matrix. In order to decrypt the ciphertext you must first find the inverse of the key matrix. This can be done using the formula below:"
+            android:textColor="#000000"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_below="@+id/textView5"
+            android:layout_marginTop="7dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ctext4_hill" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView3"
+            android:layout_marginTop="10dp"
+            android:text="After applying mod 25 to the inversed key matrix you are ready to group, multiply and handle the same way you did with the plaintext. Example of Decryption:"
+            android:textColor="#000000"
+            android:textStyle="bold" />
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_below="@+id/textView6"
+            android:layout_marginTop="7dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ctext1_hill" />
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_below="@+id/imageView4"
+            android:layout_marginTop="7dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ctext2_hill" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="397dp"
+            android:layout_height="69dp"
+            android:layout_below="@+id/imageView5"
+            android:layout_marginTop="11dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ctext3_hill" />
+
+    </RelativeLayout>
+</ScrollView>
+
