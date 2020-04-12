@@ -4,13 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="32dp"
-        android:text="Select a cipher!"
+        android:text="SELECT A CIPHER!"
+        android:textStyle ="bold"
+        android:textColor="#000000"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/cipherMenu"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -32,26 +35,31 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Shift Cipher"
+            android:textStyle ="bold"
             android:onClick="onRadioButtonClicked" />
         <RadioButton android:id="@+id/vigenereCipher"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Vigenére Cipher"
+            android:textStyle ="bold"
             android:onClick="onRadioButtonClicked" />
         <RadioButton android:id="@+id/affineCipher"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Affine Cipher"
+            android:textStyle ="bold"
             android:onClick="onRadioButtonClicked" />
         <RadioButton android:id="@+id/hillCipher"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Hill Cipher"
+            android:textStyle ="bold"
             android:onClick="onRadioButtonClicked" />
         <RadioButton android:id="@+id/rsaCipher"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="RSA Cipher"
+            android:textStyle ="bold"
             android:onClick="onRadioButtonClicked" />
     </RadioGroup>
 

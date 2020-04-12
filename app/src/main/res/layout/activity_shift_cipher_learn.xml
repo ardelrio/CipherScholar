@@ -4,6 +4,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+    android:background="@drawable/background"
         tools:context=".ShiftCipherLearn">
 
         <TextView
@@ -12,12 +13,14 @@
             android:layout_height="79dp"
             android:adjustViewBounds="true"
             android:text="     Decrypting 'GVCTXS' we can shift by a minus n = 4."
+            android:textStyle ="bold"
+            android:textColor="#000000"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.821"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.662" />
+            app:layout_constraintVertical_bias="0.677" />
 
         <Button
         android:id="@+id/homeButton"
@@ -38,6 +41,8 @@
         android:layout_height="wrap_content"
         android:text="Shift Cipher"
         android:textSize="32dp"
+        android:textStyle ="bold"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -49,6 +54,8 @@
         android:layout_width="290dp"
         android:layout_height="197dp"
         android:text="     The Shift Cipher is one of the earliest and simplest cryptosystems. A given plaintext is encrypted into a ciphertext by shifting each letter of the given plaintext by n positions. This can be done by using adding n to the corresponded number encoded version of the plaintext.  A given ciphertext is decrypted into a plaintext by shifting each letter of the given plaintext by n positions. This can be done by using adding n to the corresponded number encoded version of the plaintext. "
+        android:textStyle ="bold"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -70,8 +77,8 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="135dp"
-        android:layout_height="103dp"
+        android:layout_width="150dp"
+        android:layout_height="109dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.822"
@@ -86,6 +93,8 @@
         android:layout_height="103dp"
         android:adjustViewBounds="true"
         android:text="     Decrypting 'CRYPTO' we can shift by a addition n = 4."
+        android:textStyle ="bold"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.192"

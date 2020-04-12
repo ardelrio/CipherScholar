@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".ShiftCipherDecrypt">
 
     <TextView
@@ -12,6 +13,8 @@
         android:layout_height="wrap_content"
         android:text="Shift Cipher"
         android:textSize="32dp"
+        android:textStyle ="bold"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -34,6 +37,8 @@
         android:layout_width="258dp"
         android:layout_height="50dp"
         android:hint="enter a number"
+        android:textStyle ="bold"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -46,6 +51,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cipher Text"
+        android:textStyle ="bold"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -57,6 +64,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Shift"
+        android:textStyle ="bold"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
