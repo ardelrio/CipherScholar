@@ -84,8 +84,11 @@ public class RsaCipher extends AppCompatActivity {
 
         /* Perform first level of encryption */
         String[] adfgx = {"A", "D", "F", "G", "X"};
-        int num_rows = 2 * (pt.length() % kw.length());
+
+        int pt2 = 2 * pt.length();
+        int num_rows = pt2 / kw.length() + ((pt2 % kw.length() == 0) ? 0 : 1);
         String[][] c1 = new String[num_rows][kw.length()];
+
         for (int i = 0; i < c1.length; i++) {
             for (int j = 0; j < c1[i].length; j++) {
                 c1[i][j] = "";
