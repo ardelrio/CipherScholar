@@ -138,21 +138,21 @@ public class AffineCipherPractice extends AppCompatActivity {
             case "encrypt":
                 if(c.equals(r.toUpperCase().trim()))
                 {
-                    Toast.makeText(this, "Correct!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Correct!", Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
-                    Toast.makeText(this, "Incorrect.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Incorrect.", Toast.LENGTH_SHORT).show();
                 }
                 break;
             case "decrypt":
                 if(p.equals(r.toUpperCase().trim()))
                 {
-                    Toast.makeText(this, "Correct!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Correct!", Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
-                    Toast.makeText(this, "Incorrect.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Incorrect.", Toast.LENGTH_SHORT).show();
                 }
                 break;
             default:
@@ -165,10 +165,10 @@ public class AffineCipherPractice extends AppCompatActivity {
         switch(this.mode)
         {
             case "encrypt":
-                Toast.makeText(this, c, Toast.LENGTH_LONG).show();
+                Toast.makeText(this, c, Toast.LENGTH_SHORT).show();
                 break;
             case "decrypt":
-                Toast.makeText(this, p, Toast.LENGTH_LONG).show();
+                Toast.makeText(this, p, Toast.LENGTH_SHORT).show();
                 break;
             default:
                 break;
