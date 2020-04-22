@@ -52,7 +52,7 @@ public class VigenereCipherPractice extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shift_cipher_practice);
+        setContentView(R.layout.activity_vigenere_cipher_practice);
 
         //Set up as encrypt by default
         this.setUpProblem();
@@ -114,7 +114,7 @@ public class VigenereCipherPractice extends AppCompatActivity {
         //Generate ciphertext for this plaintext--varies depending on cipher
         int index = (int) (keys.length * Math.random());
         String k_string = keys[index]; //Get key from keys
-        this.k = k_string;
+        this.k = k_string.toUpperCase();
 
         /* convert plaintext to numbers  */
         PlaintextCleaner pc = new PlaintextCleaner();
