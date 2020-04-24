@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".RsaCipher">
+    tools:context=".AdfgxCipherDecrypt">
 
     <Button
         android:id="@+id/homeButton"
@@ -38,7 +38,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Plaintext"
+        android:text="Ciphertext"
         android:textStyle ="bold"
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -111,14 +111,13 @@
         android:id="@+id/encryptButton"
         android:layout_width="124dp"
         android:layout_height="53dp"
-        android:onClick="clickEncryptFunction"
-        android:text="Encrypt"
+        android:onClick="clickDecryptFunction"
+        android:text="Decrypt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.528"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.82" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

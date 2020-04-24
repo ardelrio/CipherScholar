@@ -48,10 +48,10 @@ public class MainActivity extends AppCompatActivity {
                     this.selectedCipher = "hill";
                 }
                 break;
-            case R.id.rsaCipher:
+            case R.id.adfgxCipher:
                 if(checked)
                 {
-                    this.selectedCipher = "rsa";
+                    this.selectedCipher = "adfgx";
                 }
                 break;
         }
@@ -81,9 +81,9 @@ public class MainActivity extends AppCompatActivity {
                 intent = new Intent(this, AffineCipher.class);
                 startActivity(intent);
                 break;
-            case "rsa":
+            case "adfgx":
                 //Go to rsa encrypt activity
-                intent = new Intent(this, RsaCipher.class);
+                intent = new Intent(this, AdfgxCipher.class);
                 startActivity(intent);
                 break;
             default:
@@ -116,9 +116,9 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent2 = new Intent(this, AffineCipherDecrypt.class);
                 startActivity(intent2);
                 break;
-            case "rsa":
+            case "adfgx":
                 //Go to rsa decrypt activity
-                Intent intent3 = new Intent(this, RsaCipherDecrypt.class);
+                Intent intent3 = new Intent(this, AdfgxCipherDecrypt.class);
                 startActivity(intent3);
                 break;
             default:
@@ -151,9 +151,9 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent2 = new Intent(this, AffineCipherLearn.class);
                 startActivity(intent2);
                 break;
-            case "rsa":
+            case "adfgx":
                 //Go to rsa learn activity
-                Intent intent3 = new Intent(this, RsaCipherLearn.class);
+                Intent intent3 = new Intent(this, AdfgxCipherLearn.class);
                 startActivity(intent3);
                 break;
             default:
@@ -186,9 +186,9 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent2 = new Intent(this, AffineCipherPractice.class);
                 startActivity(intent2);
                 break;
-            case "rsa":
+            case "adfgx":
                 //Go to rsa learn activity
-                Intent intent3 = new Intent(this, RsaCipherPractice.class);
+                Intent intent3 = new Intent(this, AdfgxCipherPractice.class);
                 startActivity(intent3);
                 break;
             default:

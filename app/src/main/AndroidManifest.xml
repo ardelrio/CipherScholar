@@ -17,10 +17,10 @@
         <activity android:name=".HillCipherDecrypt" />
         <activity android:name=".HillCipherLearn" />
         <activity android:name=".HillCipherPractice" />
-        <activity android:name=".RsaCipher" />
-        <activity android:name=".RsaCipherDecrypt" />
-        <activity android:name=".RsaCipherLearn" />
-        <activity android:name=".RsaCipherPractice" />
+        <activity android:name=".AdfgxCipher" />
+        <activity android:name=".AdfgxCipherDecrypt" />
+        <activity android:name=".AdfgxCipherLearn" />
+        <activity android:name=".AdfgxCipherPractice" />
         <activity android:name=".ShiftCipher" />
         <activity android:name=".ShiftCipherDecrypt" />
         <activity android:name=".ShiftCipherLearn" />

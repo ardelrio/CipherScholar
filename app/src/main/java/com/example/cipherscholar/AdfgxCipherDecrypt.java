@@ -8,19 +8,12 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.math.BigInteger;
-import java.util.BitSet;
-import java.util.Random;
-
-public class RsaCipher extends AppCompatActivity {
-
-    BigInteger p = null;
-    BigInteger q = null;
+public class AdfgxCipherDecrypt extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rsa_cipher);
+        setContentView(R.layout.activity_adfgx_cipher_decrypt);
     }
 
     public void clickFunction(View view) {
@@ -28,32 +21,34 @@ public class RsaCipher extends AppCompatActivity {
         startActivity(intent);
     }
 
-
-    public void clickEncryptFunction(View view) {
+    public void clickDecryptFunction(View view) {
         /* Init some useful stuff */
-        EditText plaintext = (EditText) findViewById(R.id.editText);
+        EditText ciphertext = (EditText) findViewById(R.id.editText);
         EditText keysquare = (EditText) findViewById(R.id.editText2);
         EditText keyword = (EditText) findViewById(R.id.editText3);
         TextView textView = (TextView) findViewById(R.id.textView);
         PlaintextCleaner pc = new PlaintextCleaner();
 
         /* Get the plaintext, keysquare, and keyword */
-        String pt = plaintext.getText().toString();
-        pt = pc.removeExcess(pt);
+        String ct = ciphertext.getText().toString();
+        ct = pc.removeExcess(ct);
         String ks = keysquare.getText().toString();
         ks = pc.removeExcess(ks);
         String kw = keyword.getText().toString();
         kw = pc.removeExcess(kw);
 
         /* Make sure we got something useful */
-        if (    pt == null || pt.length() == 0 ||
+        if (    ct == null || ct.length() == 0 ||
                 ks == null || ks.length() == 0 ||
                 kw == null || kw.length() == 0) {
             return;
         }
+        if (ct.length() % 2 != 0) {
+            return;
+        }
 
         /* REPLACE I WITH J */
-        pt = pt.replaceAll("I", "J");
+        ct = ct.replaceAll("I", "J");
         ks = ks.replaceAll("I", "J");
         kw = kw.replaceAll("I", "J");
 
@@ -82,40 +77,24 @@ public class RsaCipher extends AppCompatActivity {
             }
         }
 
-        /* Perform first level of encryption */
-        String[] adfgx = {"A", "D", "F", "G", "X"};
+        /* Populate c1 - pre transposition */
 
-        int pt2 = 2 * pt.length();
-        int num_rows = pt2 / kw.length() + ((pt2 % kw.length() == 0) ? 0 : 1);
+        // setup
+        int num_rows = ct.length() / kw.length() + ((ct.length() % kw.length() == 0) ? 0 : 1);  // ceiling of ct / kw
+        int num_extra = ct.length() % kw.length();  // number of chars that are in the last row ( <= length of the keyword)
         String[][] c1 = new String[num_rows][kw.length()];
-
         for (int i = 0; i < c1.length; i++) {
             for (int j = 0; j < c1[i].length; j++) {
                 c1[i][j] = "";
             }
         }
 
-        char[] pt_char = pt.toCharArray();
-        for (int i = 0; i < pt_char.length; i++) {  // for each letter in the plaintext
-            for (int j = 0; j < 5; j++) {  // loop thru square to find it
-                for (int k = 0; k < 5; k++) {
-                    if (square[j][k].equals(Character.toString(pt_char[i]))) {
-                        add(c1, adfgx[j]);
-                        add(c1, adfgx[k]);
-                    }
-                }
-            }
-        }
-
-        /* Perform key columnar transposition */
-        String c2 = "";
-
-        // find the order to add to c2
         int[] map = new int[kw.length()];
         int[] kw_int = pc.convertToNum(kw);
         int min_index = 0;
         int min_num = 0;
 
+        // get the keyword map
         for (int i = 0; i < kw_int.length; i++) {
             min_num = 26;  // highest possible value in kw_int is 25
             for (int j = 0; j < kw_int.length; j++) {
@@ -131,16 +110,94 @@ public class RsaCipher extends AppCompatActivity {
             kw_int[min_index] = -1;  // don't count it twice
         }
 
-        // add the letters to c2
-        for (int j = 0; j < map.length; j++) {
-            for (int i = 0; i < c1.length; i++) {
-                c2 += c1[i][map[j]];
+        // get the binary mask
+        int[] mask = new int[map.length];
+        for (int i = 0; i < mask.length; i++) {
+            if (map[i] < num_extra) {
+                mask[i] = 1;
+            } else {
+                mask[i] = 0;
             }
         }
 
-        /* Set the ciphertext */
-        textView.setText("Plaintext -> Ciphertext");
-        plaintext.setText(c2);
+        // make the index to populate c1
+        int[] index = new int[mask.length];
+        for (int i = 0; i < index.length; i++) {
+            if (mask[i] == 1) {
+                index[i] = num_rows;
+            } else {
+                index[i] = num_rows - 1;
+            }
+        }
+
+        // populate c1
+        char[] ct_char = ct.toCharArray();
+        int count = 0;
+        for (int j = 0; j < kw.length(); j++) {
+            for (int i = 0; i < index[j]; i++) {
+                c1[i][j] = Character.toString(ct_char[count]);
+                count++;
+            }
+        }
+
+        /* Perform the transposition */
+        String[][] c2 = new String[num_rows][kw.length()];
+        for (int i = 0; i < c1.length; i++) {
+            for (int j = 0; j < c1[i].length; j++) {
+                c2[i][j] = "";
+            }
+        }
+
+        for (int i = 0; i < map.length; i++) {
+            for (int j = 0; j < num_rows; j++) {
+                c2[j][map[i]] = c1[j][i];
+            }
+        }
+
+
+        /* Put c2 into a String */
+        String c2_str = "";
+        for (int i = 0; i < c1.length; i++) {
+            for (int j = 0; j < c1[i].length; j++) {
+                c2_str += c2[i][j];
+            }
+        }
+
+        int[] c2_int = pc.convertToNum(c2_str);
+        String plain = "";
+
+        for (int i = 0; i < c2_int.length; i += 2) {
+            int row = c2_int[i];
+            int col = c2_int[i + 1];
+
+            if (row == 0) {
+
+            } else if (row == 3) {
+                row = 1;
+            } else if (row == 5) {
+                row = 2;
+            } else if (row == 6) {
+                row = 3;
+            } else {
+                row = 4;
+            }
+
+            if (col == 0) {
+
+            } else if (col == 3) {
+                col = 1;
+            } else if (col == 5) {
+                col = 2;
+            } else if (col == 6) {
+                col = 3;
+            } else {
+                col = 4;
+            }
+            plain += square[row][col];
+        }
+
+        textView.setText("Ciphertext -> Plaintext");
+        ciphertext.setText(plain);
 
     }
 
@@ -165,5 +222,4 @@ public class RsaCipher extends AppCompatActivity {
             }
         }
     }
-
 }

@@ -74,7 +74,7 @@
             android:layout_height="81dp"
             android:layout_below="@+id/textView3"
             android:layout_marginTop="3dp"
-            app:srcCompat="@drawable/keySquare" />
+            app:srcCompat="@drawable/keysquare" />
 
         <ImageView
             android:id="@+id/imageView2"

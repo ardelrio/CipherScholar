@@ -55,10 +55,10 @@
             android:text="Hill Cipher"
             android:textStyle ="bold"
             android:onClick="onRadioButtonClicked" />
-        <RadioButton android:id="@+id/rsaCipher"
+        <RadioButton android:id="@+id/adfgxCipher"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RSA Cipher"
+            android:text="ADFGX Cipher"
             android:textStyle ="bold"
             android:onClick="onRadioButtonClicked" />
     </RadioGroup>
