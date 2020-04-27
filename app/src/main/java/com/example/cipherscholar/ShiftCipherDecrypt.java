@@ -45,6 +45,10 @@ public class ShiftCipherDecrypt extends AppCompatActivity {
         // perform the decryption
         for (int i = 0; i < c_num.length; i++) {
             c_num[i] = (c_num[i] - k) % 26;
+            if (c_num[i] < 0)
+            {
+                c_num[i] = 26 + c_num[i];
+            }
         }
 
         // turn into plaintext
