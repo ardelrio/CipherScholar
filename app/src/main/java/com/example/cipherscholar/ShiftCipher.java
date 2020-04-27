@@ -66,6 +66,10 @@ public class ShiftCipher extends AppCompatActivity {
         int[] ct = new int[pt.length];
         for (int i = 0; i < ct.length; i++) {
             ct[i] = (pt[i] + shift) % 26;
+            if (ct[i] < 0)
+            {
+                ct[i] = 26 + ct[i];
+            }
         }
 
         /* Convert cipher-text to string */
