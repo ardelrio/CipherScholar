@@ -52,6 +52,10 @@ public class AffineCipherDecrypt extends AppCompatActivity {
             int[] encrypted_int = new int[p.length()];  // final encrypted word as int
             for (int i = 0; i < p.length(); i++) {
                 encrypted_int[i] = (modInverse(k1) * (pt[i] - k2)) % 26;
+                if ( encrypted_int[i] < 0)
+                {
+                    encrypted_int[i] = 26 +  encrypted_int[i];
+                }
             }
 
             /* Convert cipher-text to string */
