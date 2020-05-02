@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -73,11 +74,24 @@ public class HillCipher extends AppCompatActivity {
                 p = pc.removeExcess(p);
 
                 int[] pt = pc.convertToNum(p);  // pt = plaintext as number
+
                 ArrayList<Integer> result = new ArrayList<Integer>();
 
                 if (pt.length % 2 == 1)
                 {
-                    pt = new int[]{pt[0], 25};
+                    int [] newpt = new int[pt.length + 1];
+                    for(int i = 0; i < newpt.length; i++)
+                    {
+                        if (i == newpt.length - 1)
+                        {
+                            newpt[i] = 25;
+                        }
+                        else
+                        {
+                            newpt[i] = pt[i];
+                        }
+                    }
+                    pt = newpt;
                 }
 
                 for(int i = 0; i < pt.length - 1; i=i+2)
