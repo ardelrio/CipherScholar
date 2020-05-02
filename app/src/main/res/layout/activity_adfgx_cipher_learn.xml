@@ -38,14 +38,14 @@
 
         <TextView
             android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" The ADFGX cipher was a field cipher used by the German Army during World War I. ADFGX is a fractionating transposition cipher which combined a modified Polybius square with a single columnar transposition. The cipher is named after the five possible letters used in the ciphertext: A, D, F, G and X. These letters were chosen deliberately because they sound very different from each other when transmitted via morse code. The intention was to reduce the possibility of operator error. In order to encrypt an ADFGX cipher, you are given a plaintext with length of 26 or less and a key word, which you need to permute into a key square."
-            android:textStyle ="bold"
-            android:textColor="#000000"
-            android:layout_below="@+id/textView2"
+            android:layout_width="291dp"
+            android:layout_height="259dp"
             android:layout_centerHorizontal="true"
-            />
+            android:layout_below="@+id/textView2"
+            android:layout_marginTop="25dp"
+            android:text=" The ADFGX cipher was a field cipher used by the German Army during World War I. ADFGX is a fractionating transposition cipher which combined a modified Polybius square with a single columnar transposition. The cipher is named after the five possible letters used in the ciphertext: A, D, F, G and X. These letters were chosen deliberately because they sound very different from each other when transmitted via morse code. The intention was to reduce the possibility of operator error. In order to encrypt an ADFGX cipher, you are given a plaintext with length of 26 or less and a key word, which you need to permute into a key square."
+            android:textColor="#000000"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView3"
@@ -78,10 +78,11 @@
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_width="355dp"
+            android:layout_height="57dp"
             android:layout_below="@+id/textView4"
-            android:layout_marginTop="15dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="22dp"
             app:srcCompat="@drawable/encrypt1_adfgx" />
 
         <TextView
@@ -104,6 +105,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            android:layout_centerHorizontal="true"
             app:srcCompat="@drawable/encrypt2_adfgx" />
 
         <ImageView
